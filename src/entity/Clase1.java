@@ -82,8 +82,6 @@ public class Clase1 {
         (Crea un programa que cuente cuantas letras tiene el trayecto y que al finalizar imprima el total.
         Actualizarlo para que retorne la cantidad del carácter ‘a’.) */
 
-
-
     }
 
 }
