@@ -111,7 +111,10 @@ public class Clase1 {
 
 
 
-
+    //CLASE 3
+    /*2. Escribir una función que evalúe si un estudiante cumple con los requisitos para promocionar y defina un mensaje
+        personalizado para cada caso. El estudiante debe contar con al menos el 80% de asistencia, haber presentado los
+        trabajos y obtener una nota mayor o igual a seis en el examen final.*/
 
 
 
