@@ -1,6 +1,6 @@
 package entity;
 
-public class Clase1 {
+public class Clase1_2_3 {
 
     public static void main(String[] args) {
     /*1. Creando las primeras variables en Java. En este caso serán cinco: nombre, apellido,edad,peso y altura.
