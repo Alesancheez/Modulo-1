@@ -18,11 +18,11 @@ public class Clase8 {
         String lugarTuristico1=scanner.nextLine();
         String lugarTuristico2 =scanner.nextLine();
 
-        CompStringCrearArray(lugarTuristico1, lugarTuristico2);
+        LugarTuristico(lugarTuristico1, lugarTuristico2);
 
     }
 
-    public static String CompStringCrearArray (String lugarTuristico1,String lugarturistico2 ) {
+    public static String LugarTuristico (String lugarTuristico1,String lugarturistico2 ) {
 
         String[] lugaresIngresados = new String[4];
         String[] lugaresSeparados1 = lugarTuristico1.split(",");
@@ -46,15 +46,5 @@ public class Clase8 {
             return lugarturistico2;}
 
     }
-
-    /*  Utilizar la clase Scanner:
-
-        1.Debemos desarrollar una funcionalidad para una entidad de préstamos que indique si la persona está habilitada
-        a obtener uno en base a que el monto solicitado no supere el 35% de su sueldo.
-        2.Escribir una función para calcular la cantidad de faltas disponibles de acuerdo a un porcentaje de asistencia y
-        cantidad de encuentros determinado¿Cuál es el resultado para una cursada de 23 encuentros que requiere un 75%
-        de asistencia? ¿Y para el caso de este módulo?
-        3.En una jornada escolar se dictan varias materias.Todas tienen la misma duración en minutos. Además, hay recreos
-        de 15 minutos entre cada una. Si se dictan cierta cantidad de materias, ¿cuánto dura la jornada completa?*/
 
 }
