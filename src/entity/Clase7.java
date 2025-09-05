@@ -39,8 +39,6 @@ public class Clase7 {
     /*4. Pedir 3 notas(Scanner), guardarlas en un array y calcular el promedio. A continuación mostrar el
         mayor y el menor.*/
 
-        Scanner notas;
-
 
 
 
