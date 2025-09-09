@@ -116,9 +116,18 @@ public class Clase1_2_3 {
         personalizado para cada caso. El estudiante debe contar con al menos el 80% de asistencia, haber presentado los
         trabajos y obtener una nota mayor o igual a seis en el examen final.*/
 
-
+         requisitos(5,2,9);
 
     }
+    public static void requisitos (int trabajos,int faltas,int examenFinal) {
+        int cargaHoraria =150 ;
+        double tiempoClase=3.2;
+        int  trabajosTotal= 6;
 
+        int totalClases =(int) (cargaHoraria/tiempoClase);
+
+        int asistencias = totalClases *80/100;
+
+    }
 }
 

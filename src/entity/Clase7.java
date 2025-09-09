@@ -38,8 +38,16 @@ public class Clase7 {
 
     /*4. Pedir 3 notas(Scanner), guardarlas en un array y calcular el promedio. A continuación mostrar el
         mayor y el menor.*/
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingresar 3 notas para promediar:");
+        int num1= scanner.nextInt();
+        int num2= scanner.nextInt();
+        int num3= scanner.nextInt();
 
-
+        int[] notas = {num1,num2,num3};
+        Arrays.sort (notas);
+        int promedio = (num1 +num2 + num3)/3;
+        System.out.println("promedio" + promedio + "numero mayor: " + notas [2] + "numero menor: " + notas [0]);
 
 
 //SCANNER EJERCICIOS
