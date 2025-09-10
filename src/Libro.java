@@ -1,5 +1,14 @@
 public class Libro {
 
+    private final Double COMISION_AUTOR;
+
+    private double comisionAutor;
+
+
+
+
+
+
     private String titulo;
     private String autor;
     private int stockDisponible;
@@ -16,6 +25,8 @@ public class Libro {
         this.precioVenta=precioVenta;
         this.sector=sector;
         this.codigo=codigo;
+
+        COMISION_AUTOR = comisionAutor;
 
     }
 
@@ -50,18 +61,26 @@ public class Libro {
 
 
     //DESCUENTO SECTOR
-    /*public String consultaDescuentoSector(){
-        if (sector.equals("c")){
-            System.out.println((10 / precioVenta)*100 );
-        }else{
-            System.out.println("no hay descuento");}
-    } */
+    public Boolean consultaDescuentoSector() {return sector.equals("c");}
 
-  //CODIGO DE OCHO DIGITOS
-    public String parteCodigo(){
+    //CODIGO DE OCHO DIGITOS
+    public String getparteCodigo(){
         String codigoTexto= Integer.toString(this.codigo);
         String cuatroDigitos=codigoTexto.substring(4);
     return "****" + cuatroDigitos;
     }
+
+    //CALCULAR PRECIO FINAL
+    public double calcularPrecioFinal(){
+        if (consultaDescuentoSector()){
+            double descuentoDinero = this.precioVenta * 0.10;
+            System.out.println("El descuento en dinero es de: " + descuentoDinero);
+            return this.precioVenta - descuentoDinero;
+        }else{
+            return this.precioVenta;
+        }
+    }
+
+
 
 }
