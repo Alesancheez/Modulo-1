@@ -43,16 +43,25 @@ public class Libro {
     public Double calcularGanancia(){
         return  precioVenta- precioCosto;
     }
+
     public Boolean hayStockDisponible(){
         return  stockDisponible > 0;
     }
 
-    public String consultaDescuentoSector(){
+
+    //DESCUENTO SECTOR
+    /*public String consultaDescuentoSector(){
         if (sector.equals("c")){
             System.out.println((10 / precioVenta)*100 );
         }else{
             System.out.println("no hay descuento");}
-    }
+    } */
 
+  //CODIGO DE OCHO DIGITOS
+    public String parteCodigo(){
+        String codigoTexto= Integer.toString(this.codigo);
+        String cuatroDigitos=codigoTexto.substring(4);
+    return "****" + cuatroDigitos;
+    }
 
 }
