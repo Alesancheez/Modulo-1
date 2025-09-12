@@ -1,12 +1,12 @@
 public class Libro {
 
-    private final Double COMISION_AUTOR;
-
-    private double comisionAutor;
+    /*private final Double COMISION_AUTOR=6;
 
 
 
-
+    public Double getCOMISION_AUTOR() {
+        return COMISION_AUTOR;
+    }*/
 
 
     private String titulo;
@@ -17,7 +17,8 @@ public class Libro {
     private String sector;
     private int codigo;
 
-    public Libro (String titulo,String autor,int stockDisponible,double precioCosto,double precioVenta,String sector, int codigo){
+
+    public Libro (String titulo, String autor, int stockDisponible, double precioCosto, double precioVenta, String sector, int codigo){
         this.titulo=titulo;
         this.autor=autor;
         this.stockDisponible=stockDisponible;
@@ -25,8 +26,6 @@ public class Libro {
         this.precioVenta=precioVenta;
         this.sector=sector;
         this.codigo=codigo;
-
-        COMISION_AUTOR = comisionAutor;
 
     }
 
