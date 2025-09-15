@@ -14,14 +14,14 @@ public class Main {
         //1
         Calculadora.numeroPotencia(2,3);
 
-        //2
-
-
         //3
         Calculadora.numeroMinimo(9.0,6.0);
 
         //4
         System.out.println(Calculadora.calcularCircunferencia(5.0));
+
+        //2
+        System.out.println(Calculadora.adivinarNumero());
     }
 
 

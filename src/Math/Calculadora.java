@@ -1,5 +1,7 @@
 package Math;
 
+import java.util.Scanner;
+
 public class Calculadora {
 
     private static final Double NUMERO_PI =Math.PI;
@@ -24,6 +26,14 @@ public class Calculadora {
 
     }
 
+    public static String adivinarNumero(){
+        Double numeroAleatorio = Math.random() * 10;
+        Scanner scanner = new Scanner(System.in);
+        double numeroIngresado=scanner.nextDouble();
+        boolean comparacion = numeroAleatorio == numeroIngresado;
+        if (comparacion) return "Adivinaste" + numeroAleatorio;
+        else return "no adivinaste" + numeroAleatorio;
+    }
 
 
 }
