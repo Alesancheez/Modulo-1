@@ -26,14 +26,27 @@ public class Calculadora {
 
     }
 
+
     public static String adivinarNumero(){
-        Double numeroAleatorio = Math.random() * 10;
-        Scanner scanner = new Scanner(System.in);
-        double numeroIngresado=scanner.nextDouble();
-        boolean comparacion = numeroAleatorio == numeroIngresado;
-        if (comparacion) return "Adivinaste" + numeroAleatorio;
-        else return "no adivinaste" + numeroAleatorio;
+        Double numeroAleatorio = Math.random()*10;
+        Double numeroRedondeado = (double) Math.round (numeroAleatorio);
+        System.out.println(numeroRedondeado);
+        System.out.println("Ingrese un numero: ");
+
+        Scanner scanner = new Scanner (System.in);
+        Double numeroIngresado = scanner.nextDouble();
+        if (numeroIngresado.equals(numeroRedondeado)){
+            return "Adivinaste el numero, " + numeroRedondeado;
+        } else System.out.println("No adivinaste, tenes 2 oportunidades mas");
+
+        numeroIngresado = scanner.nextDouble();
+        if (numeroIngresado.equals(numeroRedondeado)){
+            return "Adivinaste el numero, " + numeroRedondeado;
+        }else System.out.println("No adivinaste, tenes 1 oportunidad mas");
+
+        numeroIngresado = scanner.nextDouble();
+        if(numeroIngresado.equals(numeroRedondeado)){
+            return "Adivinaste el numero, " + numeroRedondeado;
+        }else return "No adivinaste el numero era: " + numeroRedondeado;
     }
-
-
 }
