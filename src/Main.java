@@ -5,9 +5,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
 
-        Libro comic = new Libro("El eternauta","Hector German Oesterheld",10,4000.0,6000.0,"c",10056789);
+        Libro comic = new Libro("El eternauta","Hector German Oesterheld",2,4000.0,6000.0,"c",10056789);
         Libro infantil= new Libro ("Caperucita y el Lobo","Charles Perrault", 50,1000.0,4000.0,"b",10045678);
 
+
+        //COMISION AUTOR
+        System.out.println("La comision del autor (5%) es de: $" +comic.calcularComisionAutor());
+
+        //STOCK MINIMO
+        System.out.println("Hay stock?: " + comic.hayStockDisponible() + " Se necesita reponer?: " + comic.reponerStock());
+
+        //SET DE STOCK MINIMO
+        Libro.setStockMinimo(8);
 
         //GET SET
         System.out.println(infantil.getTitulo());
@@ -19,10 +28,10 @@ public class Main {
         System.out.println(infantil.getAutor());
 
         //CONSULTA STOCK
-        System.out.println("¿Hay stock?"+ infantil.hayStockDisponible());
+        System.out.println("¿Hay stock? "+ infantil.hayStockDisponible());
 
         //DESCUENTO PRECIO FINAL
-        System.out.println("Descuento:" + infantil.calcularPrecioFinal());
+        System.out.println("Descuento: " + infantil.calcularPrecioFinal());
 
         //ARRAY
         Libro[] Libros = new Libro[3];
@@ -38,7 +47,9 @@ public class Main {
                     +"\n Código: "+ libro1.getparteCodigo()
                     +"\n Precio Final c/ descuento: "+libro1.calcularPrecioFinal())
                     ;}
-}
+
+
+    }
 
 public static Libro ingresarLibro(){
     Scanner scanner = new Scanner (System.in);

@@ -1,13 +1,24 @@
 public class Libro {
 
-    /*private final Double COMISION_AUTOR=6;
+    //COMISION PARA EL AUTOR
+    private final Double COMISION_AUTOR = 0.05;
 
+    public Double calcularComisionAutor(){
+        return precioVenta * COMISION_AUTOR;
+    }
 
+    //STOCK MINIMO DE 5 UNIDADES
+    private static int stockMinimo = 5;
 
-    public Double getCOMISION_AUTOR() {
-        return COMISION_AUTOR;
-    }*/
-
+    public static int  getStockMinimo(){
+        return stockMinimo;
+    }
+    public static int setStockMinimo(int nuevoMinimo){
+        return stockMinimo = nuevoMinimo;
+    }
+    public boolean reponerStock(){
+        return stockDisponible < stockMinimo;
+    }
 
     private String titulo;
     private String autor;
