@@ -17,8 +17,7 @@ public class Cuenta {
     }
 
     //CONSULTAR LIMITE EXTRACCION
-    public Double getLimiteExtraccion() {return  this.limiteExtraccion; }
-
+    public Double getLimiteExtraccion() {return (Double) this.limiteExtraccion; }
 
     //CONSULTAR NUMERO DE CUENTA
     public Integer getNumeroDeCuenta(){
@@ -33,21 +32,21 @@ public class Cuenta {
     //RETIRAR SALDO
     public String retirarSaldo (Double num){
         if (num <= saldo && num<=limiteExtraccion){
-            this.saldo = this.saldo - num;
+            this.saldo = (Double) (this.saldo - num);
             return "Retiro exitoso, tu saldo actual es de: " + saldo;
         }else return "Fondos insuficientes.";
     }
 
     //TRANSFERENCIA
     public String recibirSaldo ( Double monto ){
-        this.saldo = this.saldo + (monto-(monto*COMISION));
+        this.saldo = (Double) (this.saldo + (monto-(monto*COMISION)));
         return "Saldo recibido: " + (monto-(monto*COMISION)) + " Saldo actual: " + this.saldo;
     }
 
     //TRANSFERIR
     public String transferirSaldo (Double num, Integer numeroDeCuenta){
         if (num <= saldo && num<=limiteExtraccion) {
-            this.saldo = this.saldo - num;
+            this.saldo = (Double) (this.saldo - num);
             return "Transferencia exitosa, tu saldo actual es de: " + saldo;
         }else return "Fondos insuficientes";
     }
@@ -55,5 +54,15 @@ public class Cuenta {
     // CAMBIAR LIMITE EXTRACCION
     public static void setLimiteExtraccion(Double nuevoLimite){
         limiteExtraccion = nuevoLimite;
+    }
+
+    @Override
+    public String toString() {
+        return "Cuenta{" +
+                " Nombre= " + nombre + ' ' +
+                ", Dni= " + dni +
+                ", Saldo= " + saldo +
+                ", NumeroDeCuenta= " + numeroDeCuenta +
+                '}';
     }
 }
