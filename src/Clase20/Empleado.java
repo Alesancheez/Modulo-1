@@ -19,13 +19,22 @@ public class Empleado {
 
     //CALCULAR SUELDO MENSUAL
     public Double calcularSueldoMensual (){
-        return this.sueldoBase
+        return this.sueldoBase;
     }
 
     //CONSULTAR INFORMACION PERSONAL
-    public String visualizarInformacionPersonal(){
-        return this.nombre return this.apellido;
+
+    /*public void visualizarInformacionPersonal(){
+        System.out.println(this.nombre + " " + this.apellido + " " + this.dni + " " + this.telefono);
+    }*/
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "nombre= " + nombre + '\'' +
+                ", apellido= " + apellido + '\'' +
+                ", dni= " + dni +
+                ", telefono= " + telefono +
+                '}';
     }
-
-
 }
