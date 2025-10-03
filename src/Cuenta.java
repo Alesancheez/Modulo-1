@@ -24,6 +24,16 @@ public class Cuenta {
         return this.numeroDeCuenta;
     }
 
+    //GET DNI
+    public Integer getDni() {
+        return dni;
+    }
+
+    //SET SALDO
+    public void setSaldo(Double saldo) {
+        this.saldo = saldo;
+    }
+
     //CONSULTAR SALDO
     public Double saldoActual(){
         return this.saldo;

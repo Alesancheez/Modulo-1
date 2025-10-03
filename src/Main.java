@@ -34,7 +34,10 @@ public class Main {
         agregarCuenta(cuenta2);
 
         //SCANNER
-       agregarCuentaScanner();
+      //agregarCuentaScanner();
+
+       //
+        buscarCuentaDni(cuentas);
     }
 
     static ArrayList<Cuenta> cuentas= new ArrayList<>();
@@ -87,7 +90,33 @@ public class Main {
         for (int i = 0; i < cuentas.size(); i++) {
             System.out.println(cuentas.get(i).toString());
         }
-    }}
+
+
+    }
+
+    public static void buscarCuentaDni(ArrayList<Cuenta> cuentas) {
+        Scanner scanner = new Scanner(System.in);
+
+        Cuenta cuentaBuscada=null;
+
+        System.out.print("Ingrese DNI a buscar: ");
+        Integer dniIngresado = scanner.nextInt();
+        for (int i = 0; i < cuentas.size(); i++) {
+            if (dniIngresado.equals(cuentas.get(i).getDni())){ cuentaBuscada= cuentas.get(i);
+                System.out.println("Quiere actualizar el saldo?");
+            boolean respuesta = scanner.nextBoolean();
+
+            if (respuesta) {
+                System.out.println("Ingrese nuevo saldo: ");
+                Double nuevoSaldo = scanner.nextDouble();
+                cuentaBuscada.setSaldo(nuevoSaldo);}
+                System.out.println(cuentaBuscada.toString());
+        }
+    }
+}}
+
+
+
 
     /*Crear otro método que permita buscar los datos de una cuenta ingresando el dni y consultar si se quiere actualizar el saldo, ingresar el nuevo valor en
                     caso de que se confirme.*/

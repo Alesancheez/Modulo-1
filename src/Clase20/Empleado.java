@@ -30,11 +30,20 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" +
-                "nombre= " + nombre + '\'' +
-                ", apellido= " + apellido + '\'' +
-                ", dni= " + dni +
-                ", telefono= " + telefono +
-                '}';
+        return "Empleado " +
+                "Nombre= " + nombre  +
+                ", Apellido= " + apellido +
+                ", Dni= " + dni +
+                ", Telefono= " + telefono;
+    }
+
+    //REGISTRAR ENTRADA DE LOS EMPLEADOS
+    public final void registrarEntrada(){
+        System.out.println("Se registro su entrada");
+    }
+
+    //REGISTRAR SALIDA DE LOS EMPLEADOS
+    public final void registrarSalida(){
+        System.out.println("Se registro su salida");
     }
 }
