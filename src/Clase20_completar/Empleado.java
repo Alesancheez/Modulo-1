@@ -1,4 +1,4 @@
-package Clase20;
+package Clase20_completar;
 
 public class Empleado {
 
