@@ -1,9 +1,9 @@
-package Clase20_completar;
+package Clase20;
 
 public class LimpiezaVajilla extends Empleado{
 
     private Integer contadorVajillaRota;
-    private Double precioVajillaRota = 2000.0;
+    private static Double precioVajillaRota = 2000.0;
 
     public LimpiezaVajilla(String nombre, String apellido, Integer dni, Integer telefono, Double sueldoBase) {
         super(nombre, apellido, dni, telefono, sueldoBase);
@@ -27,6 +27,9 @@ public class LimpiezaVajilla extends Empleado{
             return 0.0;}
     }
 
-
-
+    //CALCULAR SUELDO MENSUAL
+ @Override
+    public Double calcularSueldoMensual() {
+        return super.calcularSueldoMensual();
+    }
 }

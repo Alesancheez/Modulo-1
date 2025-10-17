@@ -1,4 +1,4 @@
-package Clase20_completar;
+package Clase20;
 
 public class LimpiezaGeneral extends Empleado{
 
@@ -26,9 +26,10 @@ public class LimpiezaGeneral extends Empleado{
         return precioHorasExtra * cantidadHorasExtra;
     }
 
+    //CALCULAR SUELDO MENSUAL
 
-
-
-
-
+    @Override
+    public Double calcularSueldoMensual() {
+        return super.calcularSueldoMensual();
+    }
 }

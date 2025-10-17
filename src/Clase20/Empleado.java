@@ -1,4 +1,6 @@
-package Clase20_completar;
+package Clase20;
+
+import java.util.Objects;
 
 public class Empleado {
 
@@ -24,26 +26,35 @@ public class Empleado {
 
     //CONSULTAR INFORMACION PERSONAL
 
-    /*public void visualizarInformacionPersonal(){
-        System.out.println(this.nombre + " " + this.apellido + " " + this.dni + " " + this.telefono);
-    }*/
-
     @Override
     public String toString() {
         return "Empleado " +
                 "Nombre= " + nombre  +
                 ", Apellido= " + apellido +
                 ", Dni= " + dni +
-                ", Telefono= " + telefono;
+                ", Telefono= " + telefono +
+                ", Hashcode=" + hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Empleado empleado = (Empleado) o;
+        return Objects.equals(dni, empleado.dni);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dni);
     }
 
     //REGISTRAR ENTRADA DE LOS EMPLEADOS
-    public final void registrarEntrada(){
-        System.out.println("Se registro su entrada");
-    }
+    public final String registrarEntrada(String hora) {
+        return nombre + " " + apellido + " " + "registro su entrada a las: " + hora;}
 
     //REGISTRAR SALIDA DE LOS EMPLEADOS
-    public final void registrarSalida(){
-        System.out.println("Se registro su salida");
-    }
+    public final String registrarSalida(String hora){
+        return nombre + " " + apellido + " " + "registro su salida a las: " + hora;}
+
+
 }
