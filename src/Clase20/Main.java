@@ -51,6 +51,12 @@ public class Main {
         System.out.println(empleadoVajilla1);
 
 
+        //RECORER
+        for (Empleado empleado : empleados) {
+            System.out.println(empleado.toString());
+        }
+
+
     }
     public static void verificarEmpleado (ArrayList <Empleado> lista, Empleado empleadoX){
 
