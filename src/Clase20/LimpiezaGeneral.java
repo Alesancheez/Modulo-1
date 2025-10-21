@@ -2,7 +2,7 @@ package Clase20;
 
 public class LimpiezaGeneral extends Empleado{
 
-    private Integer cantidadHorasExtra;
+    private Integer cantidadHorasExtra =0;
     private static Double precioHorasExtra = 3500.0;
     private static final Integer CANTIDAD_HORAS_EXTRA_MAX =20 ;
 
@@ -27,9 +27,8 @@ public class LimpiezaGeneral extends Empleado{
     }
 
     //CALCULAR SUELDO MENSUAL
-
     @Override
     public Double calcularSueldoMensual() {
-        return super.calcularSueldoMensual();
+        return sueldoBase + calcularPrecioHorasExtra();
     }
 }

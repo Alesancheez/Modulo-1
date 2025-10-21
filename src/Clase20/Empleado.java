@@ -20,9 +20,7 @@ public abstract class Empleado {
     }
 
     //CALCULAR SUELDO MENSUAL
-    public Double calcularSueldoMensual (){
-        return this.sueldoBase;
-    }
+    public abstract Double calcularSueldoMensual ();
 
     //CONSULTAR INFORMACION PERSONAL
 
