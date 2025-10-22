@@ -21,7 +21,7 @@ public class Boletin extends Publicacion{
         return sectorOrganizacion;
     }
 
-
+    //Visualizar la información como texto (ToString)
     @Override
     public String toString() {
         return "Boletin{" +

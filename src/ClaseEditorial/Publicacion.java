@@ -1,5 +1,7 @@
 package ClaseEditorial;
 
+import java.util.Objects;
+
 public class Publicacion {
     private String nombrePublicacion;
     private String frecuenciaPublicacion;
@@ -23,6 +25,24 @@ public class Publicacion {
         return nombrePublicacion;
     }
 
+    //GET FRECUENCIA DE PUBLICACION
+    public String getFrecuenciaPublicacion() {
+        return frecuenciaPublicacion;
+    }
+
+    //SET FRECUENCIA DE PUBLICACION
+    public String setFrecuenciaPublicacion(String nuevoFrecuenciaPublicacion) {
+        frecuenciaPublicacion = nuevoFrecuenciaPublicacion;
+        return frecuenciaPublicacion;
+    }
+    //Visualizar si dos publicaciones son iguales (EQUALS)
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Publicacion that = (Publicacion) o;
+        return Objects.equals (codigoUnico, that.codigoUnico);
+    }
 
 
 }

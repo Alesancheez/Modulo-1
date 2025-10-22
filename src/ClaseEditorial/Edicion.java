@@ -27,6 +27,12 @@ public class Edicion{
         return precioBase;
     }
 
+    //CALCULAR PRECIO FINAL
+    public Double calcularPrecioFinal(){
+        Double precioFinal = precioBase + (precioBase*COMISION_FIJA);
+         return precioFinal;
+    }
+
 
 
 
