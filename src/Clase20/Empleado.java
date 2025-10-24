@@ -2,7 +2,7 @@ package Clase20;
 
 import java.util.Objects;
 
-public abstract class Empleado {
+public abstract class Empleado implements Comparable<Empleado>{
 
     private String nombre;
     private String apellido;
@@ -54,5 +54,12 @@ public abstract class Empleado {
     public final String registrarSalida(String hora){
         return nombre + " " + apellido + " " + "registro su salida a las: " + hora;}
 
+
+    //Compare to / interfaz comparable
+    @Override
+    public int compareTo(Empleado o ) {
+        //return dni.compareTo(o.dni) ; //Comparar DNI
+        return nombre.compareTo(o.nombre); //Comparar Nombre
+    }
 
 }
