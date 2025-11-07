@@ -60,8 +60,15 @@ public class Main {
         for (Integer id : aves.keySet()){
             System.out.println(aves.get(id));
         }
+//        for (Integer clave: aves.keySet()){
+//            if (Ave.get(clave).getNombre().charAt(0)=="A"){
+//                aves.remove(clave);
+//            }
+//        }
 
-
+        aves.entrySet().removeIf(elemento->
+                elemento.getValue().getNombre().toLowerCase().charAt(0) == 'A');
+        System.out.println("Map despues: " + aves.values());
 
 
 
