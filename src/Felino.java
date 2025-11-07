@@ -1,7 +1,20 @@
 import java.util.ArrayList;
 
-public class Felino extends Mamifero implements Viviparo{
-    public Felino(Integer id, String nombre, Integer edad, ArrayList<Animal> animales, Integer cantidadCrias) {
-        super(id, nombre, edad, animales, cantidadCrias);
+public class Felino extends Mamifero implements Viviparo {
+
+
+    public Felino(Integer id, String nombre, Integer edad, Integer cantidadCrias) {
+        super(id, nombre, edad, cantidadCrias);
+    }
+
+    @Override
+    public void parirMamifero() {
+
+    }
+
+    @Override
+    public void gestarMamifero() {
+
     }
 }
+
