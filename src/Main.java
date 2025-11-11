@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -13,18 +13,22 @@ public class Main {
 //        el segundo número es igual a cero.
 //        Muestra un mensaje de error apropiado en caso de división por cero.
 
-        System.out.println("Ingresar el primer numero: ");
-        int num1 = scanner.nextInt();
+//        try{
+//        System.out.println("Ingresar el primer numero: ");
+//        int num1 = scanner.nextInt();
+//
+//        System.out.println("Ingresar el segundo numero: ");
+//        int num2 = scanner.nextInt();
+//
+//
+//            int resultado = (num1/num2);
+//            System.out.println("Resultado: " + resultado);
+//        } catch (ArithmeticException |InputMismatchException e ){
+//            System.err.println("ERROR " + e);
+//            //throw exception;
+//        }
 
-        System.out.println("Ingresar el segundo numero: ");
-        int num2 = scanner.nextInt();
 
-        try{
-            int resultado = (num1/num2);
-            System.out.println("Resultado: " + resultado);
-        } catch (Exception e){
-            System.out.println("ERROR - No se puede dividir por cero ");
-        }
 
 //      2. Escribir un programa que solicite al usuario ingresar un número como una cadena y luego
 //        intente convertir esa cadena a un número entero.
@@ -32,17 +36,33 @@ public class Main {
 //        Ocurre si el usuario ingresa una cadena que no es un número válido.
 //        Debe mostrar un mensaje de error en caso de que la conversión falle.
 
-        System.out.println("Ingresar el primer numero: ");
-        String numeroString = scanner.nextLine();
+//        System.out.println("Ingresar el primer numero: ");
+//        String numeroString = scanner.nextLine();
+//
+//        try{
+//            int numero = Integer.parseInt(numeroString);
+//            System.out.println("El numero es: " + numero);
+//        } catch (NumberFormatException e ){
+//            System.err.println("ERROR - El numero no es valido");
+//        }
+
+//      3. Agrega una excepción personalizada, crea una nueva lista
+//      ¿Qué pasa si buscamos un index fuera del rango en la colección List?
+
+        List<Persona> personas = new ArrayList<>();
+        personas.add(new Persona("Pedro","Lopez",60));
+        personas.add(new Persona("Carla","Gomez",30));
+
 
         try{
-            int numero = Integer.parseInt(numeroString);
-            System.out.println("El numero es: " + numero);
-        } catch (NumberFormatException e ){
-            System.out.println("ERROR - El numero no es valido");
+            System.out.println( personas.get(2) );}
+        catch (IndexRango | IndexOutOfBoundsException e ){
+           // System.err.println(e);
+            throw new IndexRango("Index inexistente ");
         }
-//      3. Agrega una excepción personalizada al ejercicio de la clase anterior o crea una
-//        nueva lista ¿Qué pasa si buscamos un index fuera del rango en la colección List?
+
+
+
 
 
     }
