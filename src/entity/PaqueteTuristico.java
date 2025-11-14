@@ -1,6 +1,8 @@
+package entity;
+
 import java.util.*;
 
-public abstract class PaqueteTuristico {
+public abstract class PaqueteTuristico implements Comparable<PaqueteTuristico> {
 
     private Integer identificador;
     private String titulo;
@@ -20,7 +22,7 @@ public abstract class PaqueteTuristico {
 
 
     public void agregarExcursion(String excursion){
-        if (excursion != null && !excursion.isEmpty()) {
+        if (excursion != null && !excursion.trim().isEmpty()) {
             this.nombreExcursiones.add(excursion);
             System.out.println("Excursion agregada: " + excursion);
         } else {
@@ -37,15 +39,27 @@ public abstract class PaqueteTuristico {
 
     }
 
+    public double calcularPrecio() {
+        return valorBase + valorAdicional;
+    }
+
+
+    @Override
+    public int compareTo(PaqueteTuristico p) {
+        return Double.compare(this.calcularPrecio(), p.calcularPrecio());
+    }
+
+
+
     @Override
     public String toString() {
-        return "PaqueteTuristico{" +
-                "identificador=" + identificador +
-                ", titulo='" + titulo + '\'' +
-                ", valorAdicional=" + valorAdicional +
-                ", valorBase=" + valorBase +
-                ", cantidadDias=" + cantidadDias +
-                ", nombreExcursiones=" + nombreExcursiones +
+        return "Paquete Turistico{" +
+                "Identificador=" + identificador +
+                ", Titulo='" + titulo + '\'' +
+                ", Valor Adicional=" + valorAdicional +
+                ", Valor Base=" + valorBase +
+                ", Cantidad Dias=" + cantidadDias +
+                ", Nombre Excursiones=" + nombreExcursiones +
                 '}';
     }
 
@@ -71,5 +85,9 @@ public abstract class PaqueteTuristico {
 
     public void setValorAdicional(Double valorAdicional) {
         this.valorAdicional = valorAdicional;
+    }
+
+    public Integer getIdentificador() {
+        return identificador;
     }
 }

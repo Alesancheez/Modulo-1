@@ -1,3 +1,8 @@
+import entity.Guia;
+import entity.PaquetePremium;
+import entity.PaqueteSimple;
+import entity.PaqueteTuristico;
+
 import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -32,12 +37,25 @@ public class Main {
         paquete1.agregarExcursion("Cataratas");
         paquete2.agregarExcursion("Bodega Don jose");
         paquete3.agregarExcursion("Cerro tronador");
+        paquete3.agregarExcursion("Isla Veronica");
+        paquete3.eliminarExcursion("Isla Veronica");
         paquete3.agregarExcursion("Isla Victoria");
-        paquete3.eliminarExcursion("Isla Victoria");
         paquete4.agregarExcursion("Sierras");
 
-        //Recorrer lista guia
-        for (int i = 0; i < ; i++) {
+       //Recorrer lista Paquete turistico
+        for (PaqueteTuristico i : paqueteTuristicos) {
+            System.out.println(i);
+        }
+
+        //Recorrer lista Guia
+        for (Guia i : buscarguia.values()) {
+            System.out.println(i);
+        }
+
+        //  CompareTo() orderr por precio
+        Collections.sort(paqueteTuristicos);
+        for (PaqueteTuristico p : paqueteTuristicos) {
+            System.out.println(p.getTitulo() + " / $" + p.calcularPrecio());
         }
 
 
@@ -53,7 +71,7 @@ public class Main {
 
         //Visualizar informacion guias disponibles
 //        try{
-//            System.out.println( Guia.get(6) );}
+//            System.out.println( entity.Guia.get(6) );}
 //        catch (IndexOutOfBoundsException e){
 //            System.err.println(e);
 //        }

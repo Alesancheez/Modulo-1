@@ -1,3 +1,5 @@
+package entity;
+
 public class Guia {
 
     private String nombreGuia;
