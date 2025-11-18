@@ -23,8 +23,8 @@ public class Main {
 
         //Coleccion paquetes disponibles
 
-        PaqueteTuristico paquete1 = new PaqueteSimple(2201, 15, 4000.0, 0.0, "Brasil");
-        PaqueteTuristico paquete2 = new PaqueteSimple(2202, 10, 2000.0, 0.0, "Mendoza");
+        PaqueteTuristico paquete1 = new PaqueteSimple(2201, 15, 4000.0, 0.0, "Brasil","si");
+        PaqueteTuristico paquete2 = new PaqueteSimple(2202, 10, 2000.0, 0.0, "Mendoza","no");
         PaqueteTuristico paquete3 = new PaquetePremium(3301, 20, 7000.0, 0.15, "Bariloche", "BARILOCHE123", 10.0);
         PaqueteTuristico paquete4 = new PaquetePremium(3302, 25, 10000.0, 0.15, "Cordoba", "CORDOBA120", 10.0);
 
@@ -61,15 +61,15 @@ public class Main {
 
 
 
-//        //Visualizar informacion paquetes disponibles
-//        Scanner scanner = new Scanner(System.in);
-//        try{
-//            System.out.println( paqueteTuristicos.get(4) );}
-//        catch (IndexOutOfBoundsException e){
-//            System.err.println(e);
-//        }
+        //Visualizar informacion paquetes disponibles
+        Scanner scanner = new Scanner(System.in);
+        try{
+            System.out.println( paqueteTuristicos.get(4) );}
+        catch (IndexOutOfBoundsException e){
+            System.err.println(e);
+        }
 
-        //Visualizar informacion guias disponibles
+//        Visualizar informacion guias disponibles
 //        try{
 //            System.out.println( entity.Guia.get(6) );}
 //        catch (IndexOutOfBoundsException e){

@@ -31,6 +31,7 @@ public abstract class PaqueteTuristico implements Comparable<PaqueteTuristico> {
     }
 
     public void eliminarExcursion(String excursion){
+
         if (this.nombreExcursiones.remove(excursion)) {
             System.out.println("Excursion eliminada: " + excursion);
         } else {
@@ -39,17 +40,27 @@ public abstract class PaqueteTuristico implements Comparable<PaqueteTuristico> {
 
     }
 
-    public double calcularPrecio() {
-        return valorBase + valorAdicional;
+    public Integer getExcursiones() {
+        System.out.println("Nombre Excursiones:");
+
+        for (String excursion : nombreExcursiones) {
+            System.out.println(excursion);
+        }
+        return nombreExcursiones.size();
     }
 
+    public Double getPrecioBase(){
+        return valorBase;
+    }
+
+
+    public double calcularPrecio() { return getValorBase() + valorAdicional;
+    }
 
     @Override
     public int compareTo(PaqueteTuristico p) {
         return Double.compare(this.calcularPrecio(), p.calcularPrecio());
     }
-
-
 
     @Override
     public String toString() {
@@ -89,5 +100,9 @@ public abstract class PaqueteTuristico implements Comparable<PaqueteTuristico> {
 
     public Integer getIdentificador() {
         return identificador;
+    }
+
+    public Double calcularPrecioFinal(){
+        return getPrecioBase();
     }
 }

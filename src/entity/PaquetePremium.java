@@ -4,7 +4,6 @@ public class PaquetePremium extends PaqueteTuristico {
 
     private String voucherDescuento;
     private Double puntosAcumulados;
-    private Double porcentajeExcursion = 0.15;
 
 
     public PaquetePremium(Integer identificador, Integer cantidadDias, Double valorBase, Double valorAdicional, String titulo, String voucherDescuento, Double puntosAcumulados) {
@@ -27,8 +26,11 @@ public class PaquetePremium extends PaqueteTuristico {
 
     @Override
     public Double calcularPrecioFinal(){
-        Double valorAdicional = getValorBase()*porcentajeExcursion*
+        Double adicional = getValorBase() * getValorAdicional() * getExcursiones();
+        System.out.println("Precio Final: " + getPrecioBase() + adicional);
+        return getPrecioBase() + adicional;
     }
+
     @Override
     public String toString() {
         return "Paquete Premium{" +
