@@ -2,7 +2,7 @@ package entity;
 
 import java.util.*;
 
-public abstract class PaqueteTuristico implements Comparable<PaqueteTuristico> {
+public abstract class PaqueteTuristico implements Comparable<PaqueteTuristico>, Calcular{
 
     private Integer identificador;
     private String titulo;
@@ -10,14 +10,16 @@ public abstract class PaqueteTuristico implements Comparable<PaqueteTuristico> {
     private Double valorBase;
     private Integer cantidadDias;
     private Set<String> nombreExcursiones = new HashSet<>();
+    private Guia guia;
 
 
-    public PaqueteTuristico(Integer identificador, Integer cantidadDias,Double valorBase, Double valorAdicional, String titulo) {
+    public PaqueteTuristico(Integer identificador, Integer cantidadDias,Double valorBase, Double valorAdicional, String titulo,Guia guia) {
         this.identificador = identificador;
         this.cantidadDias = cantidadDias;
         this.valorBase = valorBase;
         this.valorAdicional = valorAdicional;
         this.titulo = titulo;
+        this.guia = guia;
     }
 
 
@@ -54,12 +56,11 @@ public abstract class PaqueteTuristico implements Comparable<PaqueteTuristico> {
     }
 
 
-    public double calcularPrecio() { return getValorBase() + valorAdicional;
-    }
+    public abstract Double calcularPrecioFinal();
 
     @Override
     public int compareTo(PaqueteTuristico p) {
-        return Double.compare(this.calcularPrecio(), p.calcularPrecio());
+        return Double.compare(this.calcularPrecioFinal(), p.calcularPrecioFinal());
     }
 
     @Override
@@ -71,6 +72,7 @@ public abstract class PaqueteTuristico implements Comparable<PaqueteTuristico> {
                 ", Valor Base=" + valorBase +
                 ", Cantidad Dias=" + cantidadDias +
                 ", Nombre Excursiones=" + nombreExcursiones +
+                ", Guia=" + (guia != null ? guia.toString() : "Sin guia") +
                 '}';
     }
 
@@ -102,7 +104,14 @@ public abstract class PaqueteTuristico implements Comparable<PaqueteTuristico> {
         return identificador;
     }
 
-    public Double calcularPrecioFinal(){
-        return getPrecioBase();
+
+    // Getters setters guia
+    public Guia getGuia() {
+        return guia;
     }
+
+    public void setGuia(Guia guia) {
+        this.guia = guia;
+    }
+
 }

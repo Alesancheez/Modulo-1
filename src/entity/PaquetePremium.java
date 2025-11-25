@@ -6,8 +6,8 @@ public class PaquetePremium extends PaqueteTuristico {
     private Double puntosAcumulados;
 
 
-    public PaquetePremium(Integer identificador, Integer cantidadDias, Double valorBase, Double valorAdicional, String titulo, String voucherDescuento, Double puntosAcumulados) {
-        super(identificador, cantidadDias, valorBase, valorAdicional, titulo);
+    public PaquetePremium(Integer identificador, Integer cantidadDias, Double valorBase, Double valorAdicional, String titulo,Guia guia, String voucherDescuento, Double puntosAcumulados) {
+        super(identificador, cantidadDias, valorBase, valorAdicional, titulo,guia);
         this.voucherDescuento = voucherDescuento;
         this.puntosAcumulados = puntosAcumulados;
     }
@@ -25,9 +25,8 @@ public class PaquetePremium extends PaqueteTuristico {
     }
 
     @Override
-    public Double calcularPrecioFinal(){
+    public Double calcularPrecioFinal() {
         Double adicional = getValorBase() * getValorAdicional() * getExcursiones();
-        System.out.println("Precio Final: " + getPrecioBase() + adicional);
         return getPrecioBase() + adicional;
     }
 

@@ -6,11 +6,11 @@ public class PaqueteSimple extends PaqueteTuristico {
     private String tieneCodigoDescuento;
 
 
-    public PaqueteSimple(Integer identificador, Integer cantidadDias, Double valorBase, Double valorAdicional, String titulo, String tieneCodigoDescuento) {
-        super(identificador, cantidadDias, valorBase, valorAdicional, titulo);
+    public PaqueteSimple(Integer identificador, Integer cantidadDias, Double valorBase, Double valorAdicional,
+                         String titulo,Guia guia, String tieneCodigoDescuento) {
+        super(identificador, cantidadDias, valorBase, valorAdicional, titulo, guia);
         this.tieneCodigoDescuento = tieneCodigoDescuento;
     }
-
     public String getTieneCodigoDescuento() { return tieneCodigoDescuento; }
 
     @Override
@@ -19,15 +19,15 @@ public class PaqueteSimple extends PaqueteTuristico {
     }
 
     @Override
-    public Double calcularPrecioFinal(){
-        Double adicional = getPrecioBase() * getValorAdicional() * getExcursiones();
+    public Double calcularPrecioFinal() {
 
-        if (getTieneCodigoDescuento().toLowerCase() == "si"){
-            System.out.println("Descuento aplicado. Precio Final: " + (getPrecioBase() + adicional - codigoDescuento));
-            return (getPrecioBase() + adicional - codigoDescuento);
-        }else {
-            System.out.println("Sin descuento. Precio Final: " + (getPrecioBase() + getValorAdicional()));
-            return (getPrecioBase() + adicional);
+        Double adicional = getPrecioBase() * getValorAdicional() * getExcursiones();
+        Double precio = getPrecioBase() + adicional;
+
+        if (getTieneCodigoDescuento().equalsIgnoreCase("si")) {
+            return precio * 0.75;
+        } else {
+            return precio;
         }
     }
 }

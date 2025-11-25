@@ -23,10 +23,10 @@ public class Main {
 
         //Coleccion paquetes disponibles
 
-        PaqueteTuristico paquete1 = new PaqueteSimple(2201, 15, 4000.0, 0.0, "Brasil","si");
-        PaqueteTuristico paquete2 = new PaqueteSimple(2202, 10, 2000.0, 0.0, "Mendoza","no");
-        PaqueteTuristico paquete3 = new PaquetePremium(3301, 20, 7000.0, 0.15, "Bariloche", "BARILOCHE123", 10.0);
-        PaqueteTuristico paquete4 = new PaquetePremium(3302, 25, 10000.0, 0.15, "Cordoba", "CORDOBA120", 10.0);
+        PaqueteTuristico paquete1 = new PaqueteSimple(2201, 15, 4000.0, 0.0, "Brasil",guia1,"no");
+        PaqueteTuristico paquete2 = new PaqueteSimple(2202, 10, 2000.0, 0.0, "Mendoza",guia2,"si");
+        PaqueteTuristico paquete3 = new PaquetePremium(3301, 20, 7000.0, 0.15, "Bariloche", guia3,"BARILOCHE123", 10.0);
+        PaqueteTuristico paquete4 = new PaquetePremium(3302, 25, 10000.0, 0.15, "Cordoba", guia3,"CORDOBA120", 10.0);
 
         List<PaqueteTuristico> paqueteTuristicos = new ArrayList<>();
         paqueteTuristicos.add(paquete1);
@@ -54,10 +54,10 @@ public class Main {
 
         //  CompareTo() orderr por precio
         Collections.sort(paqueteTuristicos);
-        for (PaqueteTuristico p : paqueteTuristicos) {
-            System.out.println(p.getTitulo() + " / $" + p.calcularPrecio());
-        }
 
+        for (PaqueteTuristico p : paqueteTuristicos) {
+            System.out.println(p.getTitulo() + " / $" + p.calcularPrecioFinal());
+        }
 
 
 
