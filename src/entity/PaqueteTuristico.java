@@ -55,7 +55,6 @@ public abstract class PaqueteTuristico implements Comparable<PaqueteTuristico>, 
         return valorBase;
     }
 
-
     public abstract Double calcularPrecioFinal();
 
     @Override
@@ -103,7 +102,6 @@ public abstract class PaqueteTuristico implements Comparable<PaqueteTuristico>, 
     public Integer getIdentificador() {
         return identificador;
     }
-
 
     // Getters setters guia
     public Guia getGuia() {

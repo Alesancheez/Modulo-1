@@ -59,7 +59,7 @@ public class Main {
             System.out.println(p.getTitulo() + " / $" + p.calcularPrecioFinal());
         }
 
-
+        paquete1.calcularPrecioFinal();
 
         //Visualizar informacion paquetes disponibles
         Scanner scanner = new Scanner(System.in);
